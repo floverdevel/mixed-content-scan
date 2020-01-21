@@ -37,7 +37,7 @@ class Scanner
 
     /**
      * Logger
-     * @var Logger
+     * @var LoggerInterface
      */
     private $logger;
 
@@ -70,6 +70,12 @@ class Scanner
      * @var string[]
      */
     private $ignorePatterns = [];
+
+    /**
+     * User Agent
+     * @var string
+     */
+    private $userAgent = '';
 
     /**
      * Create a new Scanner instance.
@@ -373,8 +379,11 @@ class Scanner
 
     /**
      * Get the contents of a given URL (via GET)
-     * @param  string $pageUrl The URL of the page to get the contents of
+     *
+     * @param string $pageUrl The URL of the page to get the contents of
+     *
      * @return string
+     * @throws \Exception
      */
     private function getContents(&$pageUrl)
     {
