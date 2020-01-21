@@ -14,6 +14,7 @@ class DOMDocument extends \DOMDocument
      * @var array
      */
     public $tags = [
+        'a'  => ['data-youtube'],
         'audio'  => ['src'],
         'embed'  => ['src'],
         'form'   => ['action'],
